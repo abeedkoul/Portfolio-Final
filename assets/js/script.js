@@ -1,8 +1,7 @@
 'use strict';
 
 
-
-// element toggle function
+  // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 
@@ -50,8 +49,8 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 }
 
 // add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+// modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+// overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
@@ -120,6 +119,24 @@ const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
+//Making form send email using email.js
+
+form.addEventListener("submit", function(event){
+  event.preventDefault();
+
+  emailjs.sendForm(
+    'service_7bawus7',      // your service ID
+    'template_5t2ydmm',     // your template ID
+    form                     // pass the form element
+  ).then(function(response){
+    alert("Message sent successfully!");
+    form.reset();
+  }).catch(function(error){
+    alert("Failed to send message. Please try again.");
+    console.log("EmailJS error:", error);
+  });
+});
+
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
@@ -157,3 +174,5 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+

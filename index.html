@@ -23,6 +23,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<!--  -->
+<!-- EmailJS SDK v4 -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "Ii4_UfW-Gg0ik7bb5",
+      });
+   })();
+</script>
+
 </head>
 
 <body>
@@ -472,6 +487,7 @@
           </section>
 
         </article>
+
 
 
 
@@ -928,18 +944,18 @@
             <form action="#" class="form" data-form>
 
               <div class="input-wrapper">
-                <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+                <input type="text" name="from_name" class="form-input" placeholder="Full Name" required data-form-input>
 
-                <input type="email" name="email" class="form-input" placeholder="Email address" required
+                <input type="email" name="from_email" class="form-input" placeholder="Email Address" required
                   data-form-input>
               </div>
 
               <textarea name="message" class="form-input" placeholder="Your Message" required
                 data-form-input></textarea>
 
-              <button class="form-btn" type="submit" >
+              <button class="form-btn" type="submit" data-form-btn>
                 <ion-icon name="paper-plane"></ion-icon>
-                <span><a href="mailto:koulabeed@gmail.com">Send Message</a></span>
+                <span>Send Message</span>
               </button>
 
             </form>
